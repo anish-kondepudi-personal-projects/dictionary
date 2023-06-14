@@ -4,7 +4,7 @@ class Dictionary:
 
     def __init__(self, words: list[str]) -> None:
         self.pages: list[Page] = []
-        for i in range(len(words), Page.MAX_WORDS):
+        for i in range(0, len(words), Page.MAX_WORDS):
             page_words = words[i: min(i + Page.MAX_WORDS, len(words))]
             page = Page(page_words)
             self.pages.append(page)
