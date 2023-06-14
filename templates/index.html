@@ -1,10 +1,19 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Flask App</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<head>
+    <title>Enter a Number</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" name="number" required>
+        <input type="submit" value="Submit">
+    </form>
+    <h1>Word List:</h1>
+    <ul>
+        {% for word in words %}
+            <li>{{ word }}</li>
+        {% endfor %}
+    </ul>
+</body>
 </html>
