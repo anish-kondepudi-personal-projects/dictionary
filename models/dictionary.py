@@ -10,5 +10,10 @@ class Dictionary:
             self.pages.append(page)
 
     def get_page(self, page_number: int) -> list[str]:
-        assert 0 <= page_number < len(self.pages)
+        if not self.is_valid_page(page_number):
+            return None
+        
         return self.pages[page_number - 1].words
+    
+    def is_valid_page(self, page_number: int) -> bool:
+        return 0 < page_number <= len(self.pages)
