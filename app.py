@@ -14,10 +14,12 @@ def get_dictionary() -> Dictionary:
 app = Flask(__name__)
 dictionary = get_dictionary()
 curr_page = 1
+page_count = 1
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global curr_page
+    global page_count
     word_list = []
     if request.method == 'POST':
         request_num = int(request.form['number'])
@@ -32,7 +34,8 @@ def index():
             if dictionary.is_valid_page(curr_page + 1):
                 curr_page += 1
     word_list = dictionary.get_page(curr_page)
-    return render_template('index.html', words=word_list, curr_page=curr_page)
+    page_count = dictionary.get_page_count()
+    return render_template('index.html', words=word_list, curr_page=curr_page, page_count=page_count)
 
 if __name__ == '__main__':
     get_dictionary()

@@ -16,12 +16,17 @@
             </form>
             <a href="/?page=2" class="btn btn-primary">→</a>
         </div>
-        <h1 class="mt-5">Word List:</h1>
+        <div class="d-flex justify-content-center">
+            <h3 class="mt-5">Word List:</h1>
+        </div>
         <ul class="list-group">
             {% for word in words %}
                 <li class="list-group-item">{{ word }}</li>
             {% endfor %}
         </ul>
+        <div class="d-flex justify-content-center">
+            <p>{{ curr_page }} / {{ page_count }}</p>
+        </div>
     </div>
 
     <!-- Bootstrap JS (optional) -->
