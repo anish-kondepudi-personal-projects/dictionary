@@ -17,3 +17,6 @@ class Dictionary:
     
     def is_valid_page(self, page_number: int) -> bool:
         return 0 < page_number <= len(self.pages)
+    
+    def get_page_count(self) -> int:
+        return len(self.pages)
