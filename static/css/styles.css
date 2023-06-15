@@ -9,13 +9,13 @@ body {
     justify-content: center;
     align-items: center;
 }
-.form-control {
-    width: 100px;
-    text-align: center;
-}
 h3{
     color: whitesmoke
 }
 p{
     color: whitesmoke
+}
+.form-control {
+    width: 100px;
+    text-align: center;
 }
